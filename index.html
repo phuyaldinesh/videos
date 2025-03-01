@@ -1,242 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dinesh Phuyal's YouTube Channels</title>
-  <!-- Google Fonts: Poppins for headings and Roboto for body text -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <style>
-    /* Reset and base styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    a {
-      text-decoration: none;
-    }
-
-    /* Navigation Bar Styles */
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #00796b;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-    nav a {
-      color: #fff;
-      padding: 15px 25px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #00665c;
-    }
-    nav a.active {
-      background-color: #00504a;
-    }
-
-    /* Main container styling */
-    main {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Introduction Section */
-    #introduction {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    #introduction h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 3em;
-      margin-bottom: 20px;
-      color: #00796b;
-      animation: slideInDown 0.8s ease-out;
-    }
-    #introduction p,
-    #introduction ul {
-      font-size: 1.1em;
-      margin-bottom: 15px;
-      opacity: 0;
-      animation: fadeInUp 1s ease-out forwards;
-    }
-    #introduction p:nth-of-type(1) { animation-delay: 0.3s; }
-    #introduction ul { animation-delay: 0.6s; list-style: none; }
-    #introduction ul li {
-      margin-bottom: 8px;
-    }
-    #introduction p:nth-of-type(2) { animation-delay: 1s; }
-
-    /* Channels Section */
-    #channels {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-    .channel-box {
-      flex: 1 1 300px;
-      max-width: 400px;
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 15px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: pulse 2.5s infinite;
-    }
-    .channel-box:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-    .channel-box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transform: skewX(-25deg);
-      transition: all 0.5s;
-    }
-    .channel-box:hover::before {
-      left: 100%;
-    }
-    .channel-box div {
-      text-align: center;
-      z-index: 1;
-    }
-    .channel-box i {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    .channel-box h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      transition: color 0.3s ease;
-    }
-    .channel-box p {
-      font-size: 1.1em;
-    }
-    .channel-box:hover h2 {
-      color: #ffeb3b;
-    }
-    /* Specific colors */
-    .agrisearch {
-      background-color: #43a047;
-    }
-    .dinesh {
-      background-color: #1e88e5;
-    }
-
-    /* Animations */
-    @keyframes slideInDown {
-      from {
-        transform: translateY(-40px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    @keyframes fadeInUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.02);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Responsive design */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-      #channels {
-        flex-direction: column;
-        align-items: center;
-      }
-      main {
-        padding: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website of Dinesh Phuyal - Agricultural research and travel content creator.">
+    <title>Dinesh Phuyal - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="https://phuyaldinesh.github.io/videos/">My Videos</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  
-  <main>
-    <!-- Introduction Section -->
-    <section id="introduction">
-      <h1>Welcome to My YouTube Channels!</h1>
-      <p>Hi, I'm Dinesh Phuyal – originally from Nepal and now exploring life in the USA. My passion spans research and discovering new places.</p>
-      <ul>
-        <li><strong>Agrisearch:</strong> A channel dedicated to research videos, insights from college life, and academic journeys.</li>
-        <li><strong>Dinesh Phuyal:</strong> A channel that showcases exciting travel adventures and exploration.</li>
-      </ul>
-      <p>Join me as I share my journey of discovery and learning!</p>
-    </section>
+<!-- Header -->
+<header class="header">
+    <div class="header-content">
+        <h1>Dinesh Phuyal</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="contact.html" class="nav-link">Contact Me</a>
+            <a href="https://phuyaldinesh.github.io/website/" class="nav-link main-website">Main Website</a>
+        </nav>
+    </div>
+</header>
 
-    <!-- Channel Links Section -->
-    <section id="channels">
-      <a href="https://www.youtube.com/@agrisearchtube" target="_blank" class="channel-box agrisearch">
-        <div>
-          <i class="fas fa-book"></i>
-          <h2>Agrisearch</h2>
-          <p>Research & Academic Insights</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="welcome-text">Welcome to My YouTube Channels!</h2>
+        <p>Hi, I'm Dinesh Phuyal - originally from Nepal and now exploring new places in the USA. My passion spans research and discovering new places in life.</p>
+        <ul>
+            <li><strong>Agrisearch:</strong> A channel dedicated to research videos, insights from college life, and academic journeys.</li>
+            <li><strong>Dinesh Phuyal:</strong> My channel that showcases exciting travel adventures and exploration.</li>
+        </ul>
+        <div class="channels">
+            <a href="https://www.youtube.com/@agrisearchtube" class="channel-box agrisearch">
+                <div>
+                    <i class="fas fa-book"></i>
+                    <h3>Agrisearch</h3>
+                    <p>Research & Academic Insights</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/@DineshDristi" class="channel-box dinesh">
+                <div>
+                    <i class="fas fa-globe"></i>
+                    <h3>Dinesh Phuyal</h3>
+                    <p>Travel & Adventures</p>
+                </div>
+            </a>
         </div>
-      </a>
-      <a href="https://www.youtube.com/@DineshDristi" target="_blank" class="channel-box dinesh">
-        <div>
-          <i class="fas fa-globe"></i>
-          <h2>Dinesh Phuyal</h2>
-          <p>Travel & Adventures</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://phuyaldinesh.github.io/website/">Main Website</a>
+                <a href="https://www.linkedin.com/in/dinesh-phuyal-74a6ba102">LinkedIn Profile</a>
+            </div>
+            <div class="visitor-counter">
+                Number of visitors: <span id="counter">0</span>
+            </div>
         </div>
-      </a>
-    </section>
-  </main>
+    </footer>
+
+    <!-- Visitor Counter Script -->
+    <script>
+        let count = localStorage.getItem('visitorCount') || 0;
+        count++;
+        localStorage.setItem('visitorCount', count);
+        document.getElementById('counter').textContent = count;
+    </script>
 </body>
 </html>
