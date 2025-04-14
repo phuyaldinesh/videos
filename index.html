@@ -38,14 +38,12 @@
         <div class="channels">
             <a href="https://www.youtube.com/@agrisearchtube" class="channel-box agrisearch">
                 <div>
-                    <i class="fas fa-book"></i>
                     <h3>Agrisearch</h3>
                     <p>Research & Academic Insights</p>
                 </div>
             </a>
             <a href="https://www.youtube.com/@DineshDristi" class="channel-box dinesh">
                 <div>
-                    <i class="fas fa-globe"></i>
                     <h3>Dinesh Phuyal</h3>
                     <p>Travel & Adventures</p>
                 </div>
@@ -53,12 +51,16 @@
         </div>
     </main>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
                 <a href="https://phuyaldinesh.github.io/website/">Main Website</a>
-                <a href="https://www.linkedin.com/in/dinesh-phuyal-74a6ba102">LinkedIn Profile</a>
             </div>
             <div class="visitor-counter">
                 Number of visitors: <span id="counter">0</span>
@@ -72,6 +74,40 @@
         count++;
         localStorage.setItem('visitorCount', count);
         document.getElementById('counter').textContent = count;
+    </script>
+
+    <!-- Scroll Behavior Script -->
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        const backToTopButton = document.querySelector('#back-to-top');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Only apply this behavior on mobile (screen width <= 768px)
+            if (window.innerWidth <= 768) {
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    header.classList.remove('visible');
+                    header.classList.add('hidden');
+                    backToTopButton.classList.add('visible');
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    // Scrolling up
+                    header.classList.add('visible');
+                    header.classList.remove('hidden');
+                    backToTopButton.classList.remove('visible');
+                    backToTopButton.classList.add('hidden');
+                }
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+
+        // Back to Top button functionality
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>

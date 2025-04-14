@@ -27,11 +27,23 @@ body {
 
 /* Header */
 .header {
-    background-color: #00796b;
+    background-color: rgba(0, 121, 107, 0.7);
     border-radius: 10px;
     margin-bottom: 30px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 20px;
+    right: 20px;
     z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.header.visible {
+    transform: translateY(0);
+}
+
+.header.hidden {
+    transform: translateY(-100%);
 }
 
 .header-content {
@@ -59,20 +71,21 @@ body {
 }
 
 .header nav a:hover {
-    background-color: #00665c;
+    background-color: rgba(0, 102, 92, 0.7);
 }
 
 /* Main Content */
 .main-content {
     max-width: 900px;
     margin: auto;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+    background: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 60px;
     position: relative;
     z-index: 1;
+    margin-top: 100px;
 }
 
 .welcome-text {
@@ -138,16 +151,12 @@ body {
     flex: 1 1 300px;
     max-width: 400px;
     height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border-radius: 15px;
     position: relative;
     overflow: hidden;
+    border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: pulse 2.5s infinite;
+    animation: pulseGlow 2.5s infinite;
 }
 
 .channel-box:hover {
@@ -171,15 +180,27 @@ body {
     left: 100%;
 }
 
-.channel-box div {
-    text-align: center;
-    z-index: 1;
-    padding: 20px;
+.agrisearch {
+    background-image: url('Background/Channel1.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
-.channel-box i {
-    font-size: 3rem;
-    margin-bottom: 15px;
+.dinesh {
+    background-image: url('Background/Channel2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.channel-box div {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 100%;
 }
 
 .channel-box h3 {
@@ -192,12 +213,36 @@ body {
     font-size: 1.1em;
 }
 
-.agrisearch {
-    background-color: #43a047;
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2;
 }
 
-.dinesh {
-    background-color: #1e88e5;
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top.hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Footer */
@@ -245,38 +290,51 @@ body {
     }
 }
 
-@keyframes pulse {
+@keyframes pulseGlow {
     0% {
         transform: scale(1);
+        box-shadow: 0 0 5px rgba(255,255,255,0.5);
     }
     50% {
         transform: scale(1.02);
+        box-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6);
     }
     100% {
         transform: scale(1);
+        box-shadow: 0 0 5px rgba(255,255,255,0.5);
     }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Changed to row to align title and nav side by side */
+        justify-content: space-between; /* Space between title and nav */
+        align-items: center;
+        padding: 10px 15px; /* Reduced padding to fit better */
+    }
+
+    .header h1 {
+        font-size: 1.2rem; /* Reduced font size to fit better */
     }
 
     .header nav {
-        margin-top: 1rem;
+        margin-top: 0;
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row; /* Ensure links are side by side */
+        gap: 5px; /* Reduced gap between links */
+        align-items: center;
     }
 
     .header nav a {
         margin-left: 0;
+        padding: 5px 10px; /* Reduced padding to fit links side by side */
+        font-size: 0.9rem; /* Slightly smaller font size */
     }
 
     .main-content {
         padding: 25px;
+        margin-top: 80px; /* Adjusted to fit the smaller header */
     }
 
     .welcome-text {
@@ -285,6 +343,11 @@ body {
 
     .channel-box {
         flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .channel-box div {
+        padding: 15px;
     }
 
     .footer-content {
