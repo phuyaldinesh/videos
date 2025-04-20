@@ -1,113 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official website of Dinesh Phuyal - Agricultural research and travel content creator.">
-    <title>Dinesh Phuyal - Official Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Dinesh Phuyal - Agricultural research and travel content creator." />
+  <title>Dinesh Phuyal - Official Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Background Video -->
-    <video autoplay muted loop id="background-video">
-        <source src="Background/Background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <h1>Dinesh Phuyal</h1>
-            <nav>
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="https://phuyaldinesh.github.io/website/" class="nav-link main-website">Main Website</a>
-            </nav>
+  <!-- Preloader Spinner -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video" poster="Background/BackgroundFallback.jpg">
+    <source src="Background/Background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header -->
+  <header class="header visible">
+    <div class="header-content">
+      <div class="logo-title">
+        <img src="Background/logo.png" alt="Logo" class="logo" />
+        <h1>Dinesh Phuyal</h1>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="https://phuyaldinesh.github.io/website/" class="nav-link main-website">Main Website</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h2 class="welcome-text">Welcome to My YouTube Channels!</h2>
+    <p>Hi, I'm Dinesh Phuyal - originally from Nepal and now exploring new places in the USA. My passion spans research and discovering new places in life.</p>
+    <ul>
+      <li><strong>Agrisearch:</strong> A channel dedicated to research videos, insights from college life, and academic journeys.</li>
+      <li><strong>Dinesh Phuyal:</strong> My channel that showcases exciting travel adventures and exploration.</li>
+    </ul>
+    <div class="channels">
+      <a href="https://www.youtube.com/@agrisearchtube" class="channel-box agrisearch">
+        <div>
+          <h3>Agrisearch</h3>
+          <p>Research & Academic Insights</p>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <h2 class="welcome-text">Welcome to My YouTube Channels!</h2>
-        <p>Hi, I'm Dinesh Phuyal - originally from Nepal and now exploring new places in the USA. My passion spans research and discovering new places in life.</p>
-        <ul>
-            <li><strong>Agrisearch:</strong> A channel dedicated to research videos, insights from college life, and academic journeys.</li>
-            <li><strong>Dinesh Phuyal:</strong> My channel that showcases exciting travel adventures and exploration.</li>
-        </ul>
-        <div class="channels">
-            <a href="https://www.youtube.com/@agrisearchtube" class="channel-box agrisearch">
-                <div>
-                    <h3>Agrisearch</h3>
-                    <p>Research & Academic Insights</p>
-                </div>
-            </a>
-            <a href="https://www.youtube.com/@DineshDristi" class="channel-box dinesh">
-                <div>
-                    <h3>Dinesh Phuyal</h3>
-                    <p>Travel & Adventures</p>
-                </div>
-            </a>
+      </a>
+      <a href="https://www.youtube.com/@DineshDristi" class="channel-box dinesh">
+        <div>
+          <h3>Dinesh Phuyal</h3>
+          <p>Travel & Adventures</p>
         </div>
-    </main>
+      </a>
+    </div>
+  </main>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="https://phuyaldinesh.github.io/website/">Main Website</a>
-            </div>
-            <div class="visitor-counter">
-                Number of visitors: <span id="counter">0</span>
-            </div>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://phuyaldinesh.github.io/website/">Main Website</a>
+      </div>
+      <div class="visitor-counter">
+        Number of visitors: <span id="counter">0</span>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Visitor Counter Script -->
-    <script>
-        let count = localStorage.getItem('visitorCount') || 0;
-        count++;
-        localStorage.setItem('visitorCount', count);
-        document.getElementById('counter').textContent = count;
-    </script>
+  <!-- JavaScript -->
+  <script>
+    // Preloader
+    window.addEventListener("load", function () {
+      document.getElementById("preloader").style.display = "none";
+    });
 
-    <!-- Scroll Behavior Script -->
-    <script>
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header');
-        const backToTopButton = document.querySelector('#back-to-top');
+    // Visitor counter
+    let count = localStorage.getItem("visitorCount") || 0;
+    count++;
+    localStorage.setItem("visitorCount", count);
+    document.getElementById("counter").textContent = count;
 
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Only apply this behavior on mobile (screen width <= 768px)
-            if (window.innerWidth <= 768) {
-                if (scrollTop > lastScrollTop) {
-                    // Scrolling down
-                    header.classList.remove('visible');
-                    header.classList.add('hidden');
-                    backToTopButton.classList.add('visible');
-                    backToTopButton.classList.remove('hidden');
-                } else {
-                    // Scrolling up
-                    header.classList.add('visible');
-                    header.classList.remove('hidden');
-                    backToTopButton.classList.remove('visible');
-                    backToTopButton.classList.add('hidden');
-                }
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-        });
+    // Scroll header/back to top
+    let lastScrollTop = 0;
+    const header = document.querySelector(".header");
+    const backToTopButton = document.querySelector("#back-to-top");
 
-        // Back to Top button functionality
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    window.addEventListener("scroll", function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (window.innerWidth <= 768) {
+        if (scrollTop > lastScrollTop) {
+          header.classList.remove("visible");
+          header.classList.add("hidden");
+          backToTopButton.classList.add("visible");
+        } else {
+          header.classList.add("visible");
+          header.classList.remove("hidden");
+          backToTopButton.classList.remove("visible");
+        }
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    backToTopButton.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
